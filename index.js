@@ -63,7 +63,7 @@ function loadImage(url, timeout, types, callback) {
 					});
 				}
 
-				var body = new Buffer(chunks);
+				var body = Buffer.concat(chunks);
 				callback(null, {
 					code: 0,
 					statusCode: statusCode,
