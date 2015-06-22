@@ -89,15 +89,15 @@ function loadImage(url, timeout, types, reqOpts, callback) {
 			if (e.toString().indexOf('Invalid protocol') !== -1){
 				return callback({
 					error: 5,
-					statusCode: statusCode,
-					fileType: fileType,
+					statusCode: statusCode || null,	// might be undefined
+					fileType: fileType || null,	// might be undefined
 					time: new Date() - start
 				});
 			}
 			callback({
 				error: 6,
-				statusCode: statusCode,
-				fileType: fileType,
+				statusCode: statusCode || null,	// might be undefined
+				fileType: fileType || null,	// might be undefined
 				time: new Date() - start
 			});
 		}

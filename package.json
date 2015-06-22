@@ -1,6 +1,6 @@
 {
   "name": "fast-image-downloader",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Matt Fuller <matthewdf10@gmail.com>",
   "description": "Fast and secure image downloading functionality",
   "repository": {
