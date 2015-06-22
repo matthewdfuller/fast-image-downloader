@@ -10,16 +10,25 @@ var codes = {
 	6: 'Unknown error'
 };
 
-function loadImage(url, timeout, types, callback) {
+function loadImage(url, timeout, types, reqOpts, callback) {
 	var chunks = [];
 	var statusCode;
 	var fileType;
 	var finished = false;
 	var returnFinished = function() { return finished; }
 
+	if (reqOpts && typeof reqOpts === 'object') {
+		reqOpts.encoding = null;
+	} else if (reqOpts && typeof reqOpts === 'function' && !callback) {
+		callback = reqOpts;
+		reqOpts = {};
+	} else {
+		reqOpts = {encoding:null};
+	}
+
 	try {
 		var start = new Date();
-		var r = request.get(url, {encoding:null})
+		var r = request.get(url, reqOpts)
 				.on('data', function(chunk){
 					if (!chunks.length) {
 						fileType = checkBufferMimeType(chunk);

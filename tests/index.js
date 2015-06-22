@@ -8,7 +8,7 @@ describe('Download an available image', function() {
 
 	it('should return a 200', function(done) {
 
-		downloader(GOOD_JPG, 20000, ['jpg'], function(err, result){
+		downloader(GOOD_JPG, 20000, ['jpg'], {}, function(err, result){
 			assert(result.code === 0, 'Code was not 0');
 			assert(result.statusCode === 200, 'Status code was not 200');
 			assert(result.time && result.time > 0, 'Time was not greater than 0');
@@ -20,7 +20,7 @@ describe('Download an available image', function() {
 
 	it('should return a timeout error with low timeout', function(done) {
 
-		downloader(GOOD_JPG, 10, ['jpg'], function(err, result){
+		downloader(GOOD_JPG, 10, ['jpg'], {}, function(err, result){
 			assert(err.code === 4, 'Code was not 4');
 			assert(!err.statusCode, 'Status code was not null');
 			assert(err.time && err.time > 0, 'Time was not greater than 0');
@@ -31,7 +31,7 @@ describe('Download an available image', function() {
 
 	it('should return a invalid image type error', function(done) {
 
-		downloader(GOOD_JPG, 20000, ['gif'], function(err, result){
+		downloader(GOOD_JPG, 20000, ['gif'], {}, function(err, result){
 			assert(err.code === 1, 'Code was not 1');
 			assert(err.statusCode === 200, 'Status code was not 200');
 			assert(err.time && err.time > 0, 'Time was not greater than 0');

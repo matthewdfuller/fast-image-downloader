@@ -8,7 +8,7 @@ var ALLOWED_TYPES = ['png', 'gif'];
 
 async.eachLimit(urls, 5, function(url, callback){
 	console.log('Downloading: ' + url);
-	downloader(url, 2000, ALLOWED_TYPES, function(err, data){
+	downloader(url, 2000, ALLOWED_TYPES, {}, function(err, data){
 		if (err) {
 			console.log(err);
 		} else {
