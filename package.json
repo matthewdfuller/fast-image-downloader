@@ -1,0 +1,16 @@
+{
+  "name": "fast-image-downloader",
+  "version": "0.0.1",
+  "author": "Matt Fuller <matthewdf10@gmail.com>",
+  "description": "Fast and secure image downloading functionality",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matthewdfuller/fast-image-downloader"
+  },
+  "dependencies": {
+    "request": "^2.58.0"
+  },
+  "devDependencies": {
+    "async": "^1.2.1"
+  }
+}
