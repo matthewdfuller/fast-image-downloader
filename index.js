@@ -153,6 +153,13 @@ function checkBufferMimeType(buffer) {
 		};
 	}
 
+	if (buffer[0] === 0x38 && buffer[1] === 0x42 && buffer[2] === 0x50 && buffer[3] === 0x53) {
+		return {
+			ext: 'psd',
+			mime: 'image/psd'
+		};
+	}
+
 	return null;
 }
 

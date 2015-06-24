@@ -1,3 +1,6 @@
+### 0.0.4
+* Adding support for PSD
+
 ### 0.0.3
 * Fixed bug affecting statusCode being set to undefined instead of null during uncaught errors
 
